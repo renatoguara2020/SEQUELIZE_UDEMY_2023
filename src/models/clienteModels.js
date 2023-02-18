@@ -2,6 +2,7 @@ import { Sequelize } from "sequelize";
 import db from "../../sequelizeDB";
 
 export default db.define("cliente", {
+    
   id: {
     type: Sequelize.INTEGER.UNSIGNED,
     primaryKey: true,
