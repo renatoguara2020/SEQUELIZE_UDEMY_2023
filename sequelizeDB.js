@@ -1,9 +1,13 @@
 
 const { Sequelize } = require('sequelize');
 
-// Option 1: Passing a connection URI
-const sequelize = new Sequelize('postgres://user:pass@example.com:5432/dbname') // Example for postgres
-
+const sequelize = new Sequelize(dbName, dbUser, dbPassword, {
+    //passar os dados para o sequelize
+    dialect: "mysql", //informar o tipo de banco que vamos utilizar
+    host: dbHost, //o host, neste caso estamos com um banco local
+  });
+  
+  
 
 try {
     await sequelize.authenticate();
@@ -11,3 +15,6 @@ try {
   } catch (error) {
     console.error('Unable to connect to the database:', error);
   }
+
+
+  export default sequelize; //exportar
